@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      dotnet: 3.1
+  build:
+    commands:
+      - echo "CD into source folder, because my source code is tidy"
+      - cd src
+      - echo "Restore, Build, then Publish.."
+      - dotnet restore
+      - dotnet build --no-restore
+      - dotnet publish --no-restore --output outputDirectory
+artifacts:
+  base-directory: outputDirectory
+  files:
+    - '**/*'
