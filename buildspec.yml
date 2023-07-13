@@ -6,11 +6,6 @@ phases:
   build:
     commands:
       - echo "CD into source folder, because my source code is tidy"
-      - cd src
-      - echo "Restore, Build, then Publish.."
-      - dotnet restore
-      - dotnet build --no-restore
-      - dotnet publish --no-restore --output outputDirectory
 artifacts:
   base-directory: outputDirectory
   files:
